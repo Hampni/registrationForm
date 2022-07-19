@@ -1,0 +1,22 @@
+{
+  "name": "registrationform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hampni/registrationForm.git"
+  },
+  "author": "Illia Prodanets",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hampni/registrationForm/issues"
+  },
+  "homepage": "https://github.com/Hampni/registrationForm#readme",
+  "dependencies": {
+    "@chenfengyuan/datepicker": "^1.0.10"
+  }
+}
