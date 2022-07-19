@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title> Registration Form </title>
+    <link rel="stylesheet" href="/Public/jquery-ui.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="/Public/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
             type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -13,12 +15,14 @@
     <script type="application/x-javascript"> addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
+
         function hideURLbar() {
             window.scrollTo(0, 1);
         } </script>
     <link href="/Public/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
-</head>
+
+    </head>
 <body>
 <div class="chart-align"> <?php echo $this->chart ?> </div>
 
@@ -28,9 +32,9 @@
     <div class="main-agileinfo">
         <div class="agileits-top">
             <form id="first-form" class="first-form">
-                <input class="text" type="text" name="First name" placeholder="First name" required="">
+                <input class="text" type="text" name="First name" placeholder="First name" >
                 <input class="text email" type="text" name="Last name" placeholder="Last name" required="">
-                <input class="text email" type="text" name="birthdate" placeholder="birthdate" required="">
+                <input class="text email" type="text" id="datepicker" name="Birthday" placeholder="Birthday" required="">
                 <input class="text email" type="text" name="Report subject" placeholder="Report subject" required="">
                 <input class="text email" type="text" name="Country" placeholder="Country" required="">
                 <input class="text email" id="phone_1" type="text" name="Phone" placeholder="Phone" required="">
@@ -48,9 +52,9 @@
                 <input class="text email" type="text" name="Position" placeholder="Position">
                 <textarea class="form-control" name="About me" placeholder="About me"
                           id="form6Example7" rows="4"></textarea>
-                <input class="text email" type="file" name="Photo" value="skfj" placeholder="Photo">
-                    <label for="formFileLg" class="form-label">Photo</label>
-                    <input style="background: white; color: black" class="form-control form-control-lg" id="formFileLg" type="file">
+                <label for="formFileLg" class="form-label">Photo</label>
+                <input style="background: white; color: black" class="form-control form-control-lg" id="formFileLg"
+                       type="file">
                 <input type="submit" value="Next">
             </form>
         </div>
