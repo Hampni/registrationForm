@@ -32,7 +32,7 @@ class SaveController extends Controller
             $user->fill($_POST);
             $user->save();
             session_destroy();
-            echo 'true';
+
         }
 
 

@@ -35,7 +35,7 @@ $('#first-form').submit(function () {
     return false;
 });
 
-
+console.log($.session.get('data'))
 $('#second-form').submit(function () {
 
     $.post(
@@ -43,29 +43,12 @@ $('#second-form').submit(function () {
         $("#second-form").serialize(), // отправляемые данные
 
         function (response) { // получен ответ сервера
-
+            console.log(response)
             $('#first-form').hide();
             $('#agileits-top-first').hide()
             $('#second-form').hide('slow');
             $('#agileits-top-second').hide('slow')
-
-            if (response == 'true') {
-                $(document).ready(function (e) {
-                    let formData = new FormData($('#image-form'))
-
-                    $.ajax({
-                        type:'POST',
-                        url: $(this).attr('action'),
-                        data: formData,
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-
-                    })
-                })
-            }
-
-
+            $.session.clear()
         }
     );
     return false;

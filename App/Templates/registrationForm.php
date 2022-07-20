@@ -56,13 +56,12 @@
                 <input class="text email" type="text" id="position" name="position" placeholder="Position">
                 <textarea class="form-control" name="about_me" placeholder="About me"
                           id="about_me" rows="4"></textarea>
-                <input type="submit" value="Next">
-            </form>
-            <form action="index2.php" id="image-form">
                 <label for="formFileLg" class="form-label">Photo</label>
                 <input style="background: white; color: black" class="form-control form-control-lg" id="formFileLg"
                        name="image" type="file">
+                <input type="submit" value="Next">
             </form>
+            <button type="submit" value="Next">Next</button>
         </div>
     </div>
     <ul class="colorlib-bubbles">
