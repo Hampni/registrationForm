@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/Public/jquery-ui.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
     <script src="/Public/jquery-ui.min.js"></script>
+    <script src="/Public/jquery.session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
             type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -22,7 +23,7 @@
     <link href="/Public/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 
-    </head>
+</head>
 <body>
 <div class="chart-align"> <?php echo $this->chart ?> </div>
 
@@ -30,32 +31,37 @@
 <div class="main-w3layouts wrapper">
     <h1>To participate in the conference, please fill out the form</h1>
     <div class="main-agileinfo">
-        <div class="agileits-top">
+        <div class="agileits-top" id="agileits-top-first">
             <form id="first-form" class="first-form">
-                <input class="text" type="text" name="First name" placeholder="First name" >
-                <input class="text email" type="text" name="Last name" placeholder="Last name" required="">
-                <input class="text email" type="text" id="datepicker" name="Birthday" placeholder="Birthday" required="">
-                <input class="text email" type="text" name="Report subject" placeholder="Report subject" required="">
-                <input class="text email" type="text" name="Country" placeholder="Country" required="">
-                <input class="text email" id="phone_1" type="text" name="Phone" placeholder="Phone" required="">
-                <input class="text email" type="email" name="Email" placeholder="Email" required="">
+                <input class="text email" type="text" id="first_name" name="first_name" placeholder="First name"
+                       required="">
+                <input class="text email" type="text" id="last_name" name="last_name" placeholder="Last name"
+                       required="">
+                <input class="text email" type="text" id="datepicker" name="birthday" placeholder="Birthday"
+                       required="">
+                <input class="text email" type="text" id="report_subject" name="report_subject"
+                       placeholder="Report subject" required="">
+                <input class="text email" type="text" id="country" name="country" placeholder="Country" required="">
+                <input class="text email" id="phone" type="text" name="phone" placeholder="Phone" required="">
+                <input class="text email" type="email" id="email" name="email" placeholder="Email" required="">
                 <div class="wthree-text">
                     <div class="clear"></div>
                 </div>
                 <input type="submit" value="Next">
             </form>
         </div>
-        <div id="my_message"></div>
-        <div class="agileits-top">
-            <form class="second-form" action="#" method="post">
-                <input class="text" type="text" name="Company" placeholder="Company">
-                <input class="text email" type="text" name="Position" placeholder="Position">
-                <textarea class="form-control" name="About me" placeholder="About me"
-                          id="form6Example7" rows="4"></textarea>
+        <div class="agileits-top-second" id="agileits-top-second">
+            <form class="second-form" id="second-form">
+                <input class="text" type="text" id="company" name="company" placeholder="Company">
+                <input class="text email" type="text" id="position" name="position" placeholder="Position">
+                <textarea class="form-control" name="about_me" placeholder="About me"
+                          id="about_me" rows="4"></textarea>
+                <input type="submit" value="Next">
+            </form>
+            <form action="index2.php" id="image-form">
                 <label for="formFileLg" class="form-label">Photo</label>
                 <input style="background: white; color: black" class="form-control form-control-lg" id="formFileLg"
-                       type="file">
-                <input type="submit" value="Next">
+                       name="image" type="file">
             </form>
         </div>
     </div>

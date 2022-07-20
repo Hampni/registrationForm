@@ -7,23 +7,19 @@ use App\Exeptions\ValidationExeption;
 class Validator
 {
 
-    public static function validate($requestData)
+    protected array $errors = [];
+
+    public function validate($requestData): void
     {
-
-        if (
-            empty($requestData) ||
-            empty($requestData['First_name']) ||
-            empty($requestData['Last_name']) ||
-            empty($requestData['Birthday']) ||
-            empty($requestData['Report_subject']) ||
-            empty($requestData['Country']) ||
-            empty($requestData['Phone']) ||
-            empty($requestData['Email'])
-        ) {
-            throw new ValidationExeption();
-        } else {
-            return true;
+        foreach ($requestData as $key => $field) {
+            if (empty($field)) {
+                $this->errors[] = $key;
+            }
         }
+    }
 
+    public function getErrors()
+    {
+        return $this->errors;
     }
 }

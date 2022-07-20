@@ -11,6 +11,6 @@ class RegistrationFormController extends Controller
     {
         $this->view->chart = require __DIR__ . '/../Templates/chart.php';
         $this->view->display(__DIR__ . '/../Templates/registrationForm.php');
-        var_dump($_POST);
+
     }
 }

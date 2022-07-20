@@ -14,7 +14,7 @@ abstract class Controller
 
     final public function __invoke()
     {
-            $this->action();
+        $this->action();
     }
 
     abstract protected function action();

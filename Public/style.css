@@ -146,6 +146,10 @@ h1 {
     padding: 3em;
 }
 
+.agileits-top-second {
+    padding: 3em;
+}
+
 input[type="text"], input[type="email"], input[type="password"] {
     font-size: 0.9em;
     color: #fff;
@@ -534,13 +538,13 @@ input.checkbox:checked:after {
 }
 
 /*-- responsive-design --*/
-@media(max-width:1440px) {
+@media (max-width: 1440px) {
     input[type="text"], input[type="email"], input[type="password"] {
         width: 94%;
     }
 }
 
-@media(max-width:1366px) {
+@media (max-width: 1366px) {
     h1 {
         font-size: 2.6em;
     }
@@ -558,25 +562,25 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:1280px) {
+@media (max-width: 1280px) {
     .main-agileinfo {
         width: 40%;
     }
 }
 
-@media(max-width:1080px) {
+@media (max-width: 1080px) {
     .main-agileinfo {
         width: 46%;
     }
 }
 
-@media(max-width:1024px) {
+@media (max-width: 1024px) {
     .main-agileinfo {
         width: 49%;
     }
 }
 
-@media(max-width:991px) {
+@media (max-width: 991px) {
     h1 {
         font-size: 2.4em;
     }
@@ -586,7 +590,7 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:900px) {
+@media (max-width: 900px) {
     .main-agileinfo {
         width: 58%;
     }
@@ -596,25 +600,25 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:800px) {
+@media (max-width: 800px) {
     h1 {
         font-size: 2.2em;
     }
 }
 
-@media(max-width:736px) {
+@media (max-width: 736px) {
     .main-agileinfo {
         width: 62%;
     }
 }
 
-@media(max-width:667px) {
+@media (max-width: 667px) {
     .main-agileinfo {
         width: 67%;
     }
 }
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
     .agileits-top {
         padding: 2.2em;
     }
@@ -633,7 +637,7 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:568px) {
+@media (max-width: 568px) {
     .main-agileinfo {
         width: 75%;
     }
@@ -643,7 +647,7 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:480px) {
+@media (max-width: 480px) {
     h1 {
         font-size: 1.8em;
         letter-spacing: 3px;
@@ -662,7 +666,7 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:414px) {
+@media (max-width: 414px) {
     h1 {
         font-size: 1.8em;
         letter-spacing: 2px;
@@ -700,7 +704,7 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:384px) {
+@media (max-width: 384px) {
     .main-agileinfo {
         width: 88%;
     }
@@ -710,13 +714,13 @@ input.checkbox:checked:after {
     }
 }
 
-@media(max-width:375px) {
+@media (max-width: 375px) {
     .agileits-top p {
         letter-spacing: 0px;
     }
 }
 
-@media(max-width:320px) {
+@media (max-width: 320px) {
     .main-w3layouts {
         padding: 1.5em 0 0;
     }

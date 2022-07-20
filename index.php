@@ -1,10 +1,13 @@
 <?php
+session_start();
 require __DIR__ . '/autoload.php';
 
-$class = '\App\Controllers\\' . 'RegistrationFormController';
+$params = explode('/', $_SERVER['REQUEST_URI']);
+$classes = explode('?', implode($params));
+
+$ctrl = !empty($classes[0]) ? ucfirst($classes[0]) : 'RegistrationFormController';
+$class = '\App\Controllers\\' . $ctrl;
+
 $controller = new $class;
-$controller->action();
-
-
-
+$controller();
 

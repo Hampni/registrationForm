@@ -1,21 +1,74 @@
-$("#phone_1").mask("+1 (999) 999-9999");
-$( "#datepicker" ).datepicker();
+$("#phone").mask("+1 (999) 999-9999");
+$("#datepicker").datepicker();
 
+const second_form = document.querySelector('.agileits-top-second')
 
-const second_form = document.querySelector('.second-form')
-second_form.style.display = 'none'
+if ($.session.get('data') == 'second_part') {
+    $('#agileits-top-first').hide()
+    second_form.style.display = ''
+}  else {
+    second_form.style.display = 'none'
+}
+
 
 $('#first-form').submit(function () {
 
     $.post(
-        'http://localhost:8002/App/post.php', // адрес обработчика
+        '/saveController', // адрес обработчика
         $("#first-form").serialize(), // отправляемые данные
 
         function (msg) { // получен ответ сервера
-            $('#first-form').hide('slow');
-            $('#my_message').html(msg);
-            second_form.style.display = '';
+            if (msg.length == 0) {
+                $('#first-form').hide('slow');
+                $('#agileits-top-first').hide('slow')
+                second_form.style.display = '';
+                $.session.set('data', 'second_part')
+            } else {
+                const fields = JSON.parse(msg)
+                fields.forEach((field) => {
+                    document.getElementById(field).style.border = 'red solid 1px'
+                })
+                alert('Вы заполнили не все поля!')
+            }
         }
     );
     return false;
 });
+
+
+$('#second-form').submit(function () {
+
+    $.post(
+        '/saveController', // адрес обработчика
+        $("#second-form").serialize(), // отправляемые данные
+
+        function (response) { // получен ответ сервера
+
+            $('#first-form').hide();
+            $('#agileits-top-first').hide()
+            $('#second-form').hide('slow');
+            $('#agileits-top-second').hide('slow')
+
+            if (response == 'true') {
+                $(document).ready(function (e) {
+                    let formData = new FormData($('#image-form'))
+
+                    $.ajax({
+                        type:'POST',
+                        url: $(this).attr('action'),
+                        data: formData,
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+
+                    })
+                })
+            }
+
+
+        }
+    );
+    return false;
+});
+//$.session.clear()
+
