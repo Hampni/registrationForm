@@ -2,6 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta property="og:title" content="Check out this Meetup with SoCal AngularJS! "/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title> Registration Form </title>
     <link rel="stylesheet" href="/Public/jquery-ui.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
@@ -11,20 +14,15 @@
             type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <script type="application/x-javascript"> addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        } </script>
     <link href="/Public/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 
 </head>
 <body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v14.0"
+        nonce="GGjbTgqU"></script>
+
 <div class="chart-align"> <?php echo $this->chart ?> </div>
 
 <!-- main -->
@@ -32,6 +30,8 @@
     <h1>To participate in the conference, please fill out the form</h1>
     <div class="main-agileinfo">
         <div class="agileits-top" id="agileits-top-first">
+
+            <!--first step-->
             <form id="first-form" class="first-form">
                 <input class="text email" type="text" id="first_name" name="first_name" placeholder="First name"
                        required="">
@@ -41,7 +41,14 @@
                        required="">
                 <input class="text email" type="text" id="report_subject" name="report_subject"
                        placeholder="Report subject" required="">
-                <input class="text email" type="text" id="country" name="country" placeholder="Country" required="">
+                <select class="browser-default custom-select" id="country" name="country" required="required">
+                    <option value="" selected>Country</option>
+                    <?php
+                    foreach ($this->countries as $country) {
+                        echo '<option value="' . $country->name . '">' . $country->name . '</option>';
+                    }
+                    ?>
+                </select>
                 <input class="text email" id="phone" type="text" name="phone" placeholder="Phone" required="">
                 <input class="text email" type="email" id="email" name="email" placeholder="Email" required="">
                 <div class="wthree-text">
@@ -49,8 +56,11 @@
                 </div>
                 <input type="submit" value="Next">
             </form>
+
         </div>
         <div class="agileits-top-second" id="agileits-top-second">
+
+            <!--second step-->
             <form class="second-form" id="second-form">
                 <input class="text" type="text" id="company" name="company" placeholder="Company">
                 <input class="text email" type="text" id="position" name="position" placeholder="Position">
@@ -58,10 +68,33 @@
                           id="about_me" rows="4"></textarea>
                 <label for="formFileLg" class="form-label">Photo</label>
                 <input style="background: white; color: black" class="form-control form-control-lg" id="formFileLg"
-                       name="image" type="file">
+                       name="image" type="file" accept=".jpg,.png,.jpeg">
                 <input type="submit" value="Next">
             </form>
-            <button type="submit" value="Next">Next</button>
+        </div>
+        <div class="agileits-top-third" id="agileits-top-third">
+
+            <!--Share buttons-->
+            <!--Facebook-->
+            <span class="fb-share-button" data-href="http://localhost:8002/" data-layout="button_count"
+                  data-size="small">
+                <a target="_blank"
+                   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8002%2F&amp;src=sdkpreparse"
+                   class="fb-xfbml-parse-ignore">Поделиться
+                </a>
+            </span>
+
+            <!--Twitter-->
+            <span class="shareTwitterButton">
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
+               data-text="Check out this Meetup with SoCal AngularJS! " data-url="http://localhost:8002/"
+               data-show-count="false">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <!--All members page-->
+            <button onclick="location.href='/members';" type="button" class="btn btn-primary btn-lg btn-block">
+                All members (<?php echo count($this->members) ?>)
+            </button>
+            </span>
         </div>
     </div>
     <ul class="colorlib-bubbles">

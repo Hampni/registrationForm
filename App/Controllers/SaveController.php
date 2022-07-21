@@ -31,8 +31,8 @@ class SaveController extends Controller
             $user = User::findById($_SESSION['id']);
             $user->fill($_POST);
             $user->save();
+            echo $_SESSION['id'];
             session_destroy();
-
         }
 
 

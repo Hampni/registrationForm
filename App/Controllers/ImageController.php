@@ -1,0 +1,54 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Controller;
+use App\Models\User;
+
+class ImageController extends Controller
+{
+
+    public function action()
+    {
+
+        if (isset($_POST['my_file_upload'])) {
+            // ВАЖНО! тут должны быть все проверки безопасности передавемых файлов и вывести ошибки если нужно
+
+            $uploaddir = './Public/Images'; // . - текущая папка где находится submit.php
+
+            // cоздадим папку если её нет
+            if (!is_dir($uploaddir)) mkdir($uploaddir, 0777);
+
+            $files = $_FILES; // полученные файлы
+            $done_files = array();
+
+            // переместим файлы из временной директории в указанную
+            foreach ($files as $file) {
+                $file_name = $file['name'];
+
+                if (move_uploaded_file($file['tmp_name'], "$uploaddir/$file_name")) {
+                    $done_files[] = realpath("$uploaddir/$file_name");
+                }
+            }
+
+            $data = $done_files ? array('files' => $done_files) : array('error' => 'Ошибка загрузки файлов.');
+
+            // добавляем данные в столбец фото
+            if ($file_name == '') {
+                $file_name = 'default.png';
+                $user = User::findById($_SESSION['id']);
+                $user->fill(['photo' => $file_name]);
+                $user->save();
+            } else {
+                $user = User::findById($_SESSION['id']);
+                $user->fill(['photo' => $file_name]);
+                $user->save();
+
+                die(json_encode($_SESSION['id']));
+            }
+
+
+        }
+
+    }
+}

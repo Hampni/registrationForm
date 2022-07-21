@@ -1,23 +1,30 @@
 $("#phone").mask("+1 (999) 999-9999");
-$("#datepicker").datepicker();
+$("#datepicker").datepicker({
+    changeYear: true,
+    changeMonth: true
+});
+
+
 
 const second_form = document.querySelector('.agileits-top-second')
+const buttons = document.querySelector('.agileits-top-third')
 
 if ($.session.get('data') == 'second_part') {
     $('#agileits-top-first').hide()
     second_form.style.display = ''
-}  else {
+} else {
     second_form.style.display = 'none'
 }
-
 
 $('#first-form').submit(function () {
 
     $.post(
-        '/saveController', // адрес обработчика
+        '/save', // адрес обработчика
         $("#first-form").serialize(), // отправляемые данные
 
         function (msg) { // получен ответ сервера
+            console.log(msg)
+
             if (msg.length == 0) {
                 $('#first-form').hide('slow');
                 $('#agileits-top-first').hide('slow')
@@ -35,12 +42,46 @@ $('#first-form').submit(function () {
     return false;
 });
 
-console.log($.session.get('data'))
+var files; // переменная. будет содержать данные файлов
+
+// заполняем переменную данными, при изменении значения поля file
+$('input[type=file]').on('change', function () {
+    files = this.files;
+});
+
+$('#second-form').submit(function (e) {
+    e.preventDefault();
+
+    // создадим объект данных формы
+    var data = new FormData(document.querySelector('.second-form'));
+    $.each(files, function (key, value) {
+        data.append(key, value);
+    });
+
+    data.append('my_file_upload', 1);
+
+    $.ajax({
+        type: 'POST',
+        url: '/image',
+        data: data,
+        cache: false,
+        dataType: 'json',
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            console.log(data)
+        }
+    })
+
+});
+
+
 $('#second-form').submit(function () {
 
     $.post(
-        '/saveController', // адрес обработчика
-        $("#second-form").serialize(), // отправляемые данные
+        '/save', // адрес обработчика
+
+        $("#second-form").serialize(),  // отправляемые данные
 
         function (response) { // получен ответ сервера
             console.log(response)
@@ -49,6 +90,7 @@ $('#second-form').submit(function () {
             $('#second-form').hide('slow');
             $('#agileits-top-second').hide('slow')
             $.session.clear()
+            buttons.style.display = 'block'
         }
     );
     return false;
