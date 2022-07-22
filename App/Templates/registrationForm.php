@@ -73,7 +73,7 @@
                 <input type="submit" value="Next">
             </form>
         </div>
-        <div class="agileits-top-thir" id="agileits-top-third">
+        <div class="agileits-top-third" id="agileits-top-third">
 
             <!--Share buttons-->
             <!--Facebook-->

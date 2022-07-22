@@ -1,6 +1,4 @@
 <?php
-ini_set('display_errors', 'On');
-
 session_start();
 
 require __DIR__ . '/autoload.php';
