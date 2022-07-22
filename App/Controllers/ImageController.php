@@ -46,8 +46,6 @@ class ImageController extends Controller
                 die(json_encode($_SESSION['id']));
             }
 
-
         }
-
     }
 }
