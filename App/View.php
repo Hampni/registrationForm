@@ -2,8 +2,9 @@
 
 namespace App;
 
+use App\SetGetReadTrait;
 use JetBrains\PhpStorm\Internal;
-use App\Models\SetGetReadTrait;
+
 
 class View
 {

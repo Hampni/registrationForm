@@ -27,7 +27,7 @@
 
 <!-- main -->
 <div class="main-w3layouts wrapper">
-    <h1>To participate in the conference, please fill out the form</h1>
+    <h1 class="titlePart">To participate in the conference, please fill out the form</h1>
     <div class="main-agileinfo">
         <div class="agileits-top" id="agileits-top-first">
 

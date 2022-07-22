@@ -4,16 +4,15 @@ $("#datepicker").datepicker({
     changeMonth: true
 });
 
-
-
 const second_form = document.querySelector('.agileits-top-second')
 const buttons = document.querySelector('.agileits-top-third')
+const titlePart = document.querySelector('.titlePart')
 
 if ($.session.get('data') == 'second_part') {
-    $('#agileits-top-first').hide()
-    second_form.style.display = ''
+    $('#agileits-top-first').hide();
+    second_form.style.display = '';
 } else {
-    second_form.style.display = 'none'
+    second_form.style.display = 'none';
 }
 
 $('#first-form').submit(function () {
@@ -26,22 +25,22 @@ $('#first-form').submit(function () {
 
             if (msg.length == 0) {
                 $('#first-form').hide('slow');
-                $('#agileits-top-first').hide('slow')
+                $('#agileits-top-first').hide('slow');
                 second_form.style.display = '';
-                $.session.set('data', 'second_part')
+                $.session.set('data', 'second_part');
             } else {
                 const fields = JSON.parse(msg)
                 fields.forEach((field) => {
-                    document.getElementById(field).style.border = 'red solid 1px'
+                    document.getElementById(field).style.border = 'red solid 1px';
                 })
-                alert('Вы заполнили не все поля!')
+                alert('Вы заполнили не все поля!');
             }
         }
     );
     return false;
 });
 
-var files; // переменная. будет содержать данные файлов
+let files; // переменная. будет содержать данные файлов
 
 // заполняем переменную данными, при изменении значения поля file
 $('input[type=file]').on('change', function () {
@@ -52,7 +51,7 @@ $('#second-form').submit(function (e) {
     e.preventDefault();
 
     // создадим объект данных формы
-    var data = new FormData(document.querySelector('.second-form'));
+    let data = new FormData(document.querySelector('.second-form'));
     $.each(files, function (key, value) {
         data.append(key, value);
     });
@@ -70,7 +69,6 @@ $('#second-form').submit(function (e) {
 
 });
 
-
 $('#second-form').submit(function () {
 
     $.post(
@@ -80,14 +78,15 @@ $('#second-form').submit(function () {
 
         function (response) { // получен ответ сервера
             $('#first-form').hide();
-            $('#agileits-top-first').hide()
+            $('#agileits-top-first').hide();
             $('#second-form').hide('slow');
-            $('#agileits-top-second').hide('slow')
-            $.session.clear()
-            buttons.style.display = 'block'
+            $('#agileits-top-second').hide('slow');
+            $.session.clear();
+            buttons.style.display = 'block';
+            titlePart.hide();
         }
     );
     return false;
 });
-$.session.clear()
+
 
