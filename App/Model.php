@@ -96,6 +96,8 @@ abstract class Model
                 $year = substr($value, -4) . '/';
                 $monthAndDay = substr($value,0, 5);
                 $this->$key = $year . $monthAndDay;
+            } elseif ($key == 'photo') {
+                $this->$key = $value;
             } else {
                 $this->$key = $value;
             }
