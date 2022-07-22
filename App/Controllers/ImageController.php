@@ -31,19 +31,20 @@ class ImageController extends Controller
             }
 
             $data = $done_files ? array('files' => $done_files) : array('error' => 'Ошибка загрузки файлов.');
+            $id = $_SESSION['id'];
 
             // добавляем данные в столбец фото
             if ($file_name == '') {
                 $file_name = 'default.png';
-                $user = User::findById($_SESSION['id']);
+                $user = User::findById($id);
                 $user->fill(['photo' => $file_name]);
                 $user->save();
             } else {
-                $user = User::findById($_SESSION['id']);
+                $user = User::findById($id);
                 $user->fill(['photo' => $file_name]);
                 $user->save();
 
-                die(json_encode($_SESSION['id']));
+                die(json_encode($id));
             }
 
         }
