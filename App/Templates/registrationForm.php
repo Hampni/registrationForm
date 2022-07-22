@@ -33,7 +33,8 @@
 
             <!--first step-->
             <form id="first-form" class="first-form">
-                <input style="" class="text email" type="text" id="first_name" name="first_name" placeholder="First name"
+                <input style="" class="text email" type="text" id="first_name" name="first_name"
+                       placeholder="First name"
                        required="">
                 <input class="text email" type="text" id="last_name" name="last_name" placeholder="Last name"
                        required="">
@@ -62,8 +63,8 @@
 
             <!--second step-->
             <form class="second-form" id="second-form">
-                <input  class="text" type="text" id="company" name="company" placeholder="Company">
-                <input  class="text email" type="text" id="position" name="position" placeholder="Position">
+                <input class="text" type="text" id="company" name="company" placeholder="Company">
+                <input class="text email" type="text" id="position" name="position" placeholder="Position">
                 <textarea class="form-control" name="about_me" placeholder="About me"
                           id="about_me" rows="4"></textarea>
                 <label style="padding-top: 10px; color: white" for="formFileLg" class="form-label">Photo:</label>
@@ -72,14 +73,14 @@
                 <input type="submit" value="Next">
             </form>
         </div>
-        <div class="agileits-top-third" id="agileits-top-third">
+        <div class="agileits-top-thir" id="agileits-top-third">
 
             <!--Share buttons-->
             <!--Facebook-->
             <div style="padding:25px">
                 <div>
                     <a target="_blank"
-                       href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8002%2F&amp;src=sdkpreparse"
+                       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fprodanets.trainee.albedo.dev%2F&amp;src=sdkpreparse"
                        class="fb-xfbml-parse-ignore">
                         <button style="width: 100%; margin-bottom: 10px" class="btn btn-primary">Facebook</button>
                     </a>
