@@ -30,7 +30,7 @@
                          <span><img class="member-image" src="/Public/Images/' . $member->photo . '" alt=""></span>
                          <span class="members-name">' . $member->first_name . ' ' . $member->last_name . '</span>
                          <span class="members-subject">' . $member->report_subject . '</span>
-                         <span class="members-email"><a href="mailto:'.$member->email.'">' . $member->email . '</a><br></span>
+                         <span class="members-email"><a href="mailto:'.$member->email.'">' . $member->email . '</a> <br></span>
                      </div>';
 
             }

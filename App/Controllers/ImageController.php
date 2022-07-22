@@ -12,9 +12,8 @@ class ImageController extends Controller
     {
 
         if (isset($_POST['my_file_upload'])) {
-            // ВАЖНО! тут должны быть все проверки безопасности передавемых файлов и вывести ошибки если нужно
 
-            $uploaddir = './Public/Images'; // . - текущая папка где находится submit.php
+            $uploaddir = './Public/Images'; //  
 
             // cоздадим папку если её нет
             if (!is_dir($uploaddir)) mkdir($uploaddir, 0777);

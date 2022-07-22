@@ -1,5 +1,8 @@
 <?php
+ini_set('display_errors', 'On');
+
 session_start();
+
 require __DIR__ . '/autoload.php';
 
 $params = explode('/', $_SERVER['REQUEST_URI']);
@@ -11,4 +14,3 @@ $class = '\App\Controllers\\' . $ctrl . 'Controller';
 $controller = new $class;
 $controller();
 
-//var_dump($_SESSION);

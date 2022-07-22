@@ -45,7 +45,7 @@
                     <option value="" selected>Country</option>
                     <?php
                     foreach ($this->countries as $country) {
-                        echo '<option value="' . $country->name . '">' . $country->name . '</option>';
+                        echo '<option style="color: black" value="' . $country->name . '">' . $country->name . '</option>';
                     }
                     ?>
                 </select>
@@ -76,25 +76,32 @@
 
             <!--Share buttons-->
             <!--Facebook-->
-            <span class="fb-share-button" data-href="http://localhost:8002/" data-layout="button_count"
-                  data-size="small">
-                <a target="_blank"
-                   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8002%2F&amp;src=sdkpreparse"
-                   class="fb-xfbml-parse-ignore">Поделиться
-                </a>
-            </span>
+            <div style="padding:25px">
+                <snap style="padding-right: 50px; padding-left: 5%">
+                    <a target="_blank"
+                       href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8002%2F&amp;src=sdkpreparse"
+                       class="fb-xfbml-parse-ignore">
+                        <button style="width: 40%" class="btn btn-primary">Facebook</button>
+                    </a>
+                </snap>
 
-            <!--Twitter-->
-            <span class="shareTwitterButton">
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large"
-               data-text="Check out this Meetup with SoCal AngularJS! " data-url="http://localhost:8002/"
-               data-show-count="false">Tweet</a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                <!--All members page-->
+                <!--Twitter-->
+                <snap style="padding-right: 5%">
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                           data-size="large"
+                           data-text="Check out this Meetup with SoCal AngularJS! "
+                           data-url="http://localhost:8002/"
+                           data-show-count="false"><button style="width: 40%" class="btn btn-info">Twitter</button>
+                        </a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                </snap>
+            </div>
+
+            <!--All members page-->
             <button onclick="location.href='/members';" type="button" class="btn btn-primary btn-lg btn-block">
                 All members (<?php echo count($this->members) ?>)
             </button>
-            </span>
         </div>
     </div>
     <ul class="colorlib-bubbles">

@@ -23,7 +23,6 @@ $('#first-form').submit(function () {
         $("#first-form").serialize(), // отправляемые данные
 
         function (msg) { // получен ответ сервера
-            console.log(msg)
 
             if (msg.length == 0) {
                 $('#first-form').hide('slow');
@@ -57,7 +56,6 @@ $('#second-form').submit(function (e) {
     $.each(files, function (key, value) {
         data.append(key, value);
     });
-
     data.append('my_file_upload', 1);
 
     $.ajax({
@@ -68,9 +66,6 @@ $('#second-form').submit(function (e) {
         dataType: 'json',
         contentType: false,
         processData: false,
-        success: function (data) {
-            console.log(data)
-        }
     })
 
 });
@@ -84,7 +79,6 @@ $('#second-form').submit(function () {
         $("#second-form").serialize(),  // отправляемые данные
 
         function (response) { // получен ответ сервера
-            console.log(response)
             $('#first-form').hide();
             $('#agileits-top-first').hide()
             $('#second-form').hide('slow');
@@ -95,5 +89,5 @@ $('#second-form').submit(function () {
     );
     return false;
 });
-//$.session.clear()
+$.session.clear()
 
