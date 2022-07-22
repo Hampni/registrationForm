@@ -66,7 +66,7 @@
                 <input  class="text email" type="text" id="position" name="position" placeholder="Position">
                 <textarea class="form-control" name="about_me" placeholder="About me"
                           id="about_me" rows="4"></textarea>
-                <label for="formFileLg" class="form-label">Photo</label>
+                <label style="padding-top: 10px; color: white" for="formFileLg" class="form-label">Photo:</label>
                 <input style="background: white; color: black" class="form-control form-control-lg" id="formFileLg"
                        name="image" type="file" accept=".jpg,.png,.jpeg">
                 <input type="submit" value="Next">
