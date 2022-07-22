@@ -544,6 +544,19 @@ input.checkbox:checked:after {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    white;
+}
+
 .colorlib-bubbles li:nth-child(7) {
     left: 32%;
     width: 160px;

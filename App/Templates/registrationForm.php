@@ -33,7 +33,7 @@
 
             <!--first step-->
             <form id="first-form" class="first-form">
-                <input class="text email" type="text" id="first_name" name="first_name" placeholder="First name"
+                <input style="" class="text email" type="text" id="first_name" name="first_name" placeholder="First name"
                        required="">
                 <input class="text email" type="text" id="last_name" name="last_name" placeholder="Last name"
                        required="">
@@ -62,8 +62,8 @@
 
             <!--second step-->
             <form class="second-form" id="second-form">
-                <input class="text" type="text" id="company" name="company" placeholder="Company">
-                <input class="text email" type="text" id="position" name="position" placeholder="Position">
+                <input  class="text" type="text" id="company" name="company" placeholder="Company">
+                <input  class="text email" type="text" id="position" name="position" placeholder="Position">
                 <textarea class="form-control" name="about_me" placeholder="About me"
                           id="about_me" rows="4"></textarea>
                 <label for="formFileLg" class="form-label">Photo</label>
@@ -77,25 +77,26 @@
             <!--Share buttons-->
             <!--Facebook-->
             <div style="padding:25px">
-                <snap style="padding-right: 50px; padding-left: 5%">
+                <div>
                     <a target="_blank"
                        href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8002%2F&amp;src=sdkpreparse"
                        class="fb-xfbml-parse-ignore">
-                        <button style="width: 40%" class="btn btn-primary">Facebook</button>
+                        <button style="width: 100%; margin-bottom: 10px" class="btn btn-primary">Facebook</button>
                     </a>
-                </snap>
+                </div>
 
                 <!--Twitter-->
-                <snap style="padding-right: 5%">
-                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-                           data-size="large"
-                           data-text="Check out this Meetup with SoCal AngularJS! "
-                           data-url="http://localhost:8002/"
-                           data-show-count="false"><button style="width: 40%" class="btn btn-info">Twitter</button>
-                        </a>
-                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-                </snap>
+                <div>
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                       target="_blank"
+                       data-size="large"
+                       data-text="Check out this Meetup with SoCal AngularJS! "
+                       data-url="http://localhost:8002/"
+                       data-show-count="false">
+                        <button style="width: 100%; margin-bottom: 10px" class="btn btn-info">Twitter</button>
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
             </div>
 
             <!--All members page-->

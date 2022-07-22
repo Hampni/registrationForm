@@ -83,7 +83,7 @@ $('#second-form').submit(function () {
             $('#agileits-top-second').hide('slow');
             $.session.clear();
             buttons.style.display = 'block';
-            titlePart.hide();
+            titlePart.style.display = 'none';
         }
     );
     return false;
