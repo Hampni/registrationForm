@@ -12,7 +12,7 @@ class ImageController extends Controller
     {
 
         if (isset($_POST['my_file_upload'])) {
-
+            $id = $_SESSION['id'];
             $uploaddir = './Public/Images'; //  
 
             // cоздадим папку если её нет
@@ -27,11 +27,18 @@ class ImageController extends Controller
 
                 if (move_uploaded_file($file['tmp_name'], "$uploaddir/$file_name")) {
                     $done_files[] = realpath("$uploaddir/$file_name");
+                    $user = User::findById($id);
+                    $user->fill(['photo' => $file_name]);
+                    $user->save();
+                } else {
+                    $file_name = 'default.png';
+                    $user = User::findById($id);
+                    $user->fill(['photo' => $file_name]);
+                    $user->save();
                 }
             }
 
             $data = $done_files ? array('files' => $done_files) : array('error' => 'Ошибка загрузки файлов.');
-            $id = $_SESSION['id'];
 
             // добавляем данные в столбец фото
             if ($file_name == '') {
@@ -39,14 +46,9 @@ class ImageController extends Controller
                 $user = User::findById($id);
                 $user->fill(['photo' => $file_name]);
                 $user->save();
-            } else {
-                $user = User::findById($id);
-                $user->fill(['photo' => $file_name]);
-                $user->save();
 
-                die(json_encode($id));
             }
-
+            die(json_encode($id));
         }
     }
 }

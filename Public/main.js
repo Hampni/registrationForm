@@ -1,8 +1,49 @@
-$("#phone").mask("+1 (999) 999-9999");
-$("#datepicker").datepicker({
+$("#phone").mask(" (999) 999-9999");
+$("#birthday").datepicker({
     changeYear: true,
     changeMonth: true
 });
+
+let array = [
+    'first_name',
+    'last_name',
+    'birthday',
+    'report_subject',
+    'country',
+    'phone',
+    'email'
+]
+
+let input = document.querySelector("#phone");
+window.intlTelInput(input, {
+    autoPlaceholder: 'aggressive'
+});
+let iti = intlTelInput(input)
+let number = iti.getNumber();
+
+let dateMask = IMask(
+    document.getElementById('birthday'),
+    {
+        mask: Date,
+        min: new Date(1950, 0, 1),
+        max: new Date(2022, 12, 30),
+        lazy: false
+    });
+
+let first_name = IMask(document.getElementById('first_name'), {
+    mask: '#aaaaaaaaaaaaaaaaaaaa',
+    definitions: {
+        '#': /[A-Za-z]/
+    }
+});
+let last_name = IMask(document.getElementById('last_name'), {
+    mask: '#aaaaaaaaaaaaaaaaaaaa',
+    definitions: {
+        '#': /[A-Za-z]/
+    }
+});
+
+
 
 const second_form = document.querySelector('.agileits-top-second')
 const buttons = document.querySelector('.agileits-top-third')
@@ -17,6 +58,13 @@ if ($.session.get('data') == 'second_part') {
 
 $('#first-form').submit(function () {
 
+    for (const item in array) {
+        let html = document.getElementById(array[item] + '_label').innerHTML
+        document.getElementById(array[item] + '_label').style.color = 'floralwhite';
+        document.getElementById(array[item] + '_label').innerHTML = html;
+        document.getElementById(array[item]).style.border = '';
+    }
+
     $.post(
         '/save', // адрес обработчика
         $("#first-form").serialize(), // отправляемые данные
@@ -29,11 +77,17 @@ $('#first-form').submit(function () {
                 second_form.style.display = '';
                 $.session.set('data', 'second_part');
             } else {
-                const fields = JSON.parse(msg)
-                fields.forEach((field) => {
-                    document.getElementById(field).style.border = 'red solid 1px';
-                })
-                alert('Вы заполнили не все поля!');
+                let fields = JSON.parse(msg)
+                for (const key in fields) {
+
+                    if (document.getElementById(key).value == '') {
+                        document.getElementById(key + '_label').innerHTML = 'These field cannot be empty!';
+                        document.getElementById(key + '_label').style.color = 'red';
+                    }
+                    document.getElementById(key + '_label').style.color = 'red';
+                    document.getElementById(key + '_label').innerHTML = fields[key];
+                    document.getElementById(key).style.border = 'red solid 1px';
+                }
             }
         }
     );

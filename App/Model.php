@@ -31,7 +31,19 @@ abstract class Model
         if ($data == true) {
             return $data[0];
         } else {
-            echo 2;
+            echo 'not found';
+        }
+    }
+
+    public static function findByEmail($email)
+    {
+        $db = new Db();
+        $sql = 'SELECT * FROM ' . static::TABLE . ' WHERE email=:email';
+        $data = $db->query($sql, [':email' => $email], static::class);
+        if ($data == true) {
+            return $data[0];
+        } else {
+            return 'not found';
         }
     }
 
@@ -94,8 +106,9 @@ abstract class Model
         foreach ($data as $key => $value) {
             if ($key == 'birthday') {
                 $year = substr($value, -4) . '/';
-                $monthAndDay = substr($value,0, 5);
-                $this->$key = $year . $monthAndDay;
+                $month = substr($value, 3,2) . '/';
+                $day = substr($value,0,2);
+                $this->$key = $year . $month . $day;
             } elseif ($key == 'photo') {
                 $this->$key = $value;
             } else {

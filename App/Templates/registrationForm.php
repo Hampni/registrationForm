@@ -12,10 +12,14 @@
     <script src="/Public/jquery.session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js"
             type="text/javascript"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="node_modules/intl-tel-input/build/js/intlTelInput.js"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="/Public/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/intl-tel-input/build/css/intlTelInput.css">
 
 </head>
 <body>
@@ -24,7 +28,6 @@
         nonce="GGjbTgqU"></script>
 
 <div class="chart-align"> <?php echo $this->chart ?> </div>
-
 <!-- main -->
 <div class="main-w3layouts wrapper">
     <h1 class="titlePart">To participate in the conference, please fill out the form</h1>
@@ -32,17 +35,41 @@
         <div class="agileits-top" id="agileits-top-first">
 
             <!--first step-->
+
             <form id="first-form" class="first-form">
-                <input style="" class="text email" type="text" id="first_name" name="first_name"
+
+                <!--First name-->
+                <label style="color: floralwhite; font-weight: 100" class="label_input" id="first_name_label"
+                       for="first_name">Only upper and lower case: Jhon</label>
+                <input class="text email" style="margin-top: 5px;" type="text" id="first_name" name="first_name"
                        placeholder="First name"
                        required="">
-                <input class="text email" type="text" id="last_name" name="last_name" placeholder="Last name"
+
+                <!--Last name-->
+                <label style="color: floralwhite; font-weight: 100" id="last_name_label" for="last_name">Only upper and
+                    lower case: Dorian</label>
+                <input class="text email" style="margin-top: 5px;" type="text" id="last_name" name="last_name"
+                       placeholder="Last name"
                        required="">
-                <input class="text email" type="text" id="datepicker" name="birthday" placeholder="Birthday"
+
+                <!--Birthday-->
+                <label style="color: floralwhite; font-weight: 100" id="birthday_label" for="birthday">Insert full
+                    date:</label>
+                <input class="text email" style="margin-top: 5px;" type="text" id="birthday" name="birthday"
+                       placeholder="Birthday"
                        required="">
-                <input class="text email" type="text" id="report_subject" name="report_subject"
+
+                <!--Report Subject-->
+                <label style="color: floralwhite; font-weight: 100" id="report_subject_label" for="report_subject">Only
+                    upper,lower case and digits:</label>
+                <input class="text email" style="margin-top: 5px;" type="text" id="report_subject" name="report_subject"
                        placeholder="Report subject" required="">
-                <select class="browser-default custom-select" id="country" name="country" required="required">
+
+                <!--Country-->
+                <label style="color: floralwhite; font-weight: 100" id="country_label" for="country">Choose your
+                    country:</label>
+                <select class="browser-default custom-select" style="margin-top: 5px; margin-bottom: 25px;" id="country"
+                        name="country" required="required">
                     <option value="" selected>Country</option>
                     <?php
                     foreach ($this->countries as $country) {
@@ -50,8 +77,19 @@
                     }
                     ?>
                 </select>
-                <input class="text email" id="phone" type="text" name="phone" placeholder="Phone" required="">
-                <input class="text email" type="email" id="email" name="email" placeholder="Email" required="">
+
+                <!--Phone number-->
+                <label style="color: floralwhite; font-weight: 100" id="phone_label" for="phone">Insert your phone
+                    number:</label><br>
+                <input class="text email" style="margin-top: 5px; display: block" id="phone" type="text" name="phone"
+                       placeholder="Phone" required="">
+                <br class="phone_br_bottom">
+
+                <!--Email-->
+                <label style="color: floralwhite; font-weight: 100 " id="email_label" for="email">Insert your email.
+                    Example: YourEmail@mail.com</label> <br>
+                <input class="text email" style="margin-top: 5px;" type="email" id="email" name="email"
+                       placeholder="Email" required="">
                 <div class="wthree-text">
                     <div class="clear"></div>
                 </div>
@@ -120,6 +158,7 @@
     </ul>
 </div>
 <!-- //main -->
+
 <script src="/Public/main.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
