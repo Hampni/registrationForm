@@ -42,13 +42,13 @@
                 <label style="color: floralwhite; font-size: 14px; font-weight: 100" class="label_input" id="first_name_label"
                        for="first_name">Only upper and lower case: Jhon</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="first_name" name="first_name"
-                       placeholder="First name"
+                       placeholder=""
                        required="">
 
                 <!--Last name-->
                 <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="last_name_label" for="last_name">Only upper and lower case: Dorian</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="last_name" name="last_name"
-                       placeholder="Last name"
+                       placeholder=""
                        required="">
 
                 <!--Birthday-->
@@ -60,7 +60,7 @@
                 <!--Report Subject-->
                 <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="report_subject_label" for="report_subject">Only upper,lower case and digits:</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="report_subject" name="report_subject"
-                       placeholder="Report subject" required="">
+                       placeholder="" required="">
 
                 <!--Country-->
                 <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="country_label" for="country">Choose your country:</label>
@@ -82,7 +82,7 @@
                 <!--Email-->
                 <label style="color: floralwhite; font-size: 14px; font-weight: 100 " id="email_label" for="email">Insert your email. Example: YourEmail@mail.com</label> <br>
                 <input class="text email" style="margin-top: 5px;" type="email" id="email" name="email"
-                       placeholder="Email" required="">
+                       placeholder="" required="">
                 <div class="wthree-text">
                     <div class="clear"></div>
                 </div>

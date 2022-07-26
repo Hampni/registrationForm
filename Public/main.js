@@ -2,6 +2,13 @@ const second_form = document.querySelector('.agileits-top-second');
 const buttons = document.querySelector('.agileits-top-third');
 const titlePart = document.querySelector('.titlePart');
 
+$("#first_name")[0].placeholder = 'First name';
+$("#last_name")[0].placeholder = 'Last name';
+$("#report_subject")[0].placeholder = 'Report subject';
+$("#email")[0].placeholder = 'Email';
+$("#company")[0].placeholder = 'Company';
+$("#position")[0].placeholder = 'Position';
+
 $("#phone").mask(' (999) 999-999?9', {
     placeholder: ''
 });
@@ -36,6 +43,69 @@ window.intlTelInput(input, {
 let iti = intlTelInput(input);
 $('#phone').on('change', function () {
     $("#phone")[0].value = '+' + iti.getSelectedCountryData().dialCode + $("#phone")[0].value;
+});
+
+
+
+$('#first_name').on('click', function () {
+    $("#first_name")[0].placeholder = ' ';
+});
+
+$(document).on('click', function (e) {
+    if (!$(e.target).closest("#first_name").length) {
+        $("#first_name")[0].placeholder = 'First name'
+    }
+});
+
+$('#last_name').on('click', function () {
+    $("#last_name")[0].placeholder = ' ';
+});
+
+$(document).on('click', function (e) {
+    if (!$(e.target).closest("#last_name").length) {
+        $("#last_name")[0].placeholder = 'Last name'
+    }
+});
+
+
+$('#report_subject').on('click', function () {
+    $("#report_subject")[0].placeholder = ' ';
+});
+
+$(document).on('click', function (e) {
+    if (!$(e.target).closest("#report_subject").length) {
+        $("#report_subject")[0].placeholder = 'Report subject'
+    }
+});
+
+$('#email').on('click', function () {
+    $("#email")[0].placeholder = ' ';
+});
+
+$(document).on('click', function (e) {
+    if (!$(e.target).closest("#email").length) {
+        $("#email")[0].placeholder = 'Email'
+    }
+});
+
+$('#company').on('click', function () {
+    $("#company")[0].placeholder = ' ';
+});
+
+$(document).on('click', function (e) {
+    if (!$(e.target).closest("#company").length) {
+        $("#company")[0].placeholder = 'Company'
+    }
+});
+
+$('#position').on('click', function () {
+    $("#position")[0].placeholder = ' ';
+});
+
+$(document).on('click', function (e) {
+    if (!$(e.target).closest("#position").length) {
+        $("#position")[0].placeholder = 'Position'
+    }
 });
 
 let dateMask = IMask(
