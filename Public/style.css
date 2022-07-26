@@ -7,10 +7,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 /*-- reset --*/
 @import 'intl-tel-input/build/css/intlTelInput.css';
 
-.iti__flag {background-image: url("node_modules/intl-tel-input/build/img/flags.png");}
+.iti__flag {
+    background-image: url("node_modules/intl-tel-input/build/img/flags.png");
+}
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    .iti__flag {background-image: url("node_modules/intl-tel-input/build/img/flags@2x.png");}
+    .iti__flag {
+        background-image: url("node_modules/intl-tel-input/build/img/flags@2x.png");
+    }
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -256,7 +260,6 @@ input.email, input.text.w3lpass {
 }
 
 
-
 input[type="submit"] {
     font-size: .9em;
     color: #fff;
@@ -278,6 +281,15 @@ input[type="submit"]:hover {
     -ms-transition: .5s all;
     transition: .5s all;
     background: #8DC26F;
+}
+
+.backButton {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.btn-success {
+    width: 90%;
 }
 
 .agileits-top p {
@@ -532,7 +544,7 @@ input.checkbox:checked:after {
     bottom: 40px;
 }
 
-.container  {
+.container {
     padding-left: 100px;
     color: white;
     vertical-align: top;
@@ -562,16 +574,19 @@ input.checkbox:checked:after {
 }
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-    color:    white;
+    color: white;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    white;
+    color: white;
 }
+
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    white;
+    color: white;
 }
+
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    white;
+    color: white;
 }
 
 .colorlib-bubbles li:nth-child(7) {

@@ -10,7 +10,7 @@ $("#birthday").datepicker({
     dateFormat: "dd-mm-yy",
     changeYear: true,
     changeMonth: true,
-    yearRange: "1950:2022"
+    yearRange: "1950:2021"
 
 });
 
@@ -43,7 +43,7 @@ let dateMask = IMask(
     {
         mask: Date,
         min: new Date(1950, 0, 1),
-        max: new Date(2022, 12, 30),
+        max: new Date(2021, 12, 30),
         lazy: false
     });
 

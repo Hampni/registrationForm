@@ -16,27 +16,33 @@
 
 </head>
 <body>
-
 <div class="main-w3layouts wrapper">
 
-
+    <div class="backButton">
+        <h1>
+            <a href="/">
+                <button class="btn btn-success">Back to Form</button>
+            </a>
+        </h1>
+    </div>
     <h1>All members</h1>
+
     <div class="main-agileinfo" style="width: 100%;">
         <div class="members-convert">
             <?php foreach ($this->members as $member) : ?>
                 <div class="container text-center">
                     <div class="row">
                         <div class="col">
-                            <?php echo '<span><img class="member-image" src="/Public/Images/' . $member->photo . '" alt="">';?>
+                            <?php echo '<span><img class="member-image" src="/Public/Images/' . $member->photo . '" alt="">'; ?>
                         </div>
                         <div class="col">
-                            <?php echo $member->first_name . ' ' . $member->last_name;?>
+                            <?php echo $member->first_name . ' ' . $member->last_name; ?>
                         </div>
                         <div class="col">
-                            <?php echo $member->report_subject;?>
+                            <?php echo $member->report_subject; ?>
                         </div>
                         <div class="col">
-                            <?php echo '<a href="mailto:' . $member->email . '">' . $member->email . '</a>';?>
+                            <?php echo '<a href="mailto:' . $member->email . '">' . $member->email . '</a>'; ?>
                         </div>
                     </div>
                 </div>

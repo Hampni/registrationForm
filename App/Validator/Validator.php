@@ -25,7 +25,7 @@ class Validator
     {
         if ($field == '') {
             $this->errors[$key] = 'You did not fill this field';
-        } elseif (!preg_match("/^[a-zA-Z\-_]+$/", $field)) {
+        } elseif (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }
     }
@@ -34,7 +34,7 @@ class Validator
     {
         if ($field == '') {
             $this->errors[$key] = 'You did not fill this field';
-        } elseif (!preg_match("/^[a-zA-Z\-_]+$/", $field)) {
+        } elseif (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }
     }
@@ -52,7 +52,7 @@ class Validator
     {
         if ($field == '') {
             $this->errors[$key] = 'You did not fill this field';
-        } elseif (!preg_match("/^[a-zA-Z\d\\s\-_]+$/", $field)) {
+        } elseif (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }
     }
