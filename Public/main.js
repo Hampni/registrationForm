@@ -2,7 +2,6 @@ const second_form = document.querySelector('.agileits-top-second');
 const buttons = document.querySelector('.agileits-top-third');
 const titlePart = document.querySelector('.titlePart');
 
-
 $("#phone").mask(' (999) 999-999?9', {
     placeholder: ''
 });
@@ -24,17 +23,17 @@ let array = [
     'phone',
     'email'
 ];
+
 let arrayLabels = [];
 for (const item in array) {
     arrayLabels[array[item]] = document.getElementById(array[item] + '_label').innerHTML;
 }
-
 let input = document.querySelector("#phone");
+
 window.intlTelInput(input, {
     autoPlaceholder: 'aggressive',
 });
 let iti = intlTelInput(input);
-
 $('#phone').on('change', function () {
     $("#phone")[0].value = '+' + iti.getSelectedCountryData().dialCode + $("#phone")[0].value;
 });
@@ -54,12 +53,19 @@ let first_name = IMask(document.getElementById('first_name'), {
         '#': /[A-Za-z]/
     }
 });
+
 let last_name = IMask(document.getElementById('last_name'), {
     mask: '#aaaaaaaaaaaaaaaaaaaa',
     definitions: {
         '#': /[A-Za-z]/
     }
 });
+
+
+$('.iti.iti--allow-dropdown')[0].style.width = '100%';
+$('.iti.iti--allow-dropdown')[0].style.marginBottom = '13px';
+$('.iti.iti--allow-dropdown')[1].style.width = '100%';
+
 
 if ($.session.get('data') == 'second_part') {
     $('#agileits-top-first').hide();
