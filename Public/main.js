@@ -123,6 +123,7 @@ $('#second-form').submit(function (e) {
         data.append(key, value);
     });
     data.append('my_file_upload', 1);
+    data.append('id', 1);
 
     $.ajax({
         type: 'POST',
@@ -132,28 +133,29 @@ $('#second-form').submit(function (e) {
         dataType: 'json',
         contentType: false,
         processData: false,
+        success: function () {
+
+            $.post(
+                '/save', // адрес обработчика
+
+                $("#second-form").serialize(),  // отправляемые данные
+
+                function (response) { // получен ответ сервера
+                    $('#first-form').hide();
+                    $('#agileits-top-first').hide();
+                    $('#second-form').hide('slow');
+                    $('#agileits-top-second').hide('slow');
+                    $.session.clear();
+                    buttons.style.display = 'block';
+                    titlePart.style.display = 'none';
+                }
+            );
+            return false;
+        }
     })
 
 });
 
-$('#second-form').submit(function () {
 
-    $.post(
-        '/save', // адрес обработчика
-
-        $("#second-form").serialize(),  // отправляемые данные
-
-        function (response) { // получен ответ сервера
-            $('#first-form').hide();
-            $('#agileits-top-first').hide();
-            $('#second-form').hide('slow');
-            $('#agileits-top-second').hide('slow');
-            $.session.clear();
-            buttons.style.display = 'block';
-            titlePart.style.display = 'none';
-        }
-    );
-    return false;
-});
 
 

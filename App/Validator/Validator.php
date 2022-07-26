@@ -52,7 +52,7 @@ class Validator
     {
         if ($field == '') {
             $this->errors[$key] = 'You did not fill this field';
-        } elseif (!preg_match("/^[a-zA-Z\d\-_]+$/", $field)) {
+        } elseif (!preg_match("/^[a-zA-Z\d\\s\-_]+$/", $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }
     }

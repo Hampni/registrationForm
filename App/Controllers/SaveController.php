@@ -22,6 +22,7 @@ class SaveController extends Controller
                 $user->fill($_POST);
                 $user->save();
                 $_SESSION['id'] = $user->id;
+
             } else {
                 $errors = json_encode($validator->getErrors());
                 echo $errors;

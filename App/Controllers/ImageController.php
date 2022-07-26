@@ -46,7 +46,6 @@ class ImageController extends Controller
                 $user = User::findById($id);
                 $user->fill(['photo' => $file_name]);
                 $user->save();
-
             }
             die(json_encode($id));
         }

@@ -14,6 +14,8 @@ class MembersController extends Controller
         foreach ($members as $member) {
             if (!file_exists(__DIR__ . '/../../Public/Images/' . $member->photo)) {
                 $member->photo = 'default.png';
+            } elseif ($member->photo == null) {
+                $member->photo = 'default.png';
             }
         }
         $this->view->members = $members;
