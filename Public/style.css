@@ -259,6 +259,9 @@ input.email, input.text.w3lpass {
     color: #fff;
 }
 
+input::-webkit-input-placeholder {
+    line-height: normal;!important;
+}
 
 input[type="submit"] {
     font-size: .9em;
