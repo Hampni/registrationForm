@@ -24,7 +24,7 @@ class Validator
     public function validateFirst_name($key, $field)
     {
         if ($field == '') {
-            $this->errors[$key] = $key;
+            $this->errors[$key] = 'You did not fill this field';
         } elseif (!preg_match("/^[a-zA-Z\-_]+$/", $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }
@@ -33,7 +33,7 @@ class Validator
     public function validateLast_name($key, $field)
     {
         if ($field == '') {
-            $this->errors[$key] = $key;
+            $this->errors[$key] = 'You did not fill this field';
         } elseif (!preg_match("/^[a-zA-Z\-_]+$/", $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }
@@ -42,7 +42,7 @@ class Validator
     public function validateBirthday($key, $field)
     {
         if ($field == '') {
-            $this->errors[$key] = $key;
+            $this->errors[$key] = 'You did not fill this field';
         } elseif (strpos($field, '_') !== false) {
             $this->errors[$key] = 'Data is not filled';
         }
@@ -51,7 +51,7 @@ class Validator
     public function validateReport_subject($key, $field)
     {
         if ($field == '') {
-            $this->errors[$key] = $key;
+            $this->errors[$key] = 'You did not fill this field';
         } elseif (!preg_match("/^[a-zA-Z\d\-_]+$/", $field)) {
             $this->errors[$key] = 'Used invalid symbols';
         }

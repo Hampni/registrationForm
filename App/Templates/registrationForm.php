@@ -46,28 +46,24 @@
                        required="">
 
                 <!--Last name-->
-                <label style="color: floralwhite; font-weight: 100" id="last_name_label" for="last_name">Only upper and
-                    lower case: Dorian</label>
+                <label style="color: floralwhite; font-weight: 100" id="last_name_label" for="last_name">Only upper and lower case: Dorian</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="last_name" name="last_name"
                        placeholder="Last name"
                        required="">
 
                 <!--Birthday-->
-                <label style="color: floralwhite; font-weight: 100" id="birthday_label" for="birthday">Insert full
-                    date:</label>
+                <label style="color: floralwhite; font-weight: 100" id="birthday_label" for="birthday">Insert full date:</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="birthday" name="birthday"
                        placeholder="Birthday"
                        required="">
 
                 <!--Report Subject-->
-                <label style="color: floralwhite; font-weight: 100" id="report_subject_label" for="report_subject">Only
-                    upper,lower case and digits:</label>
+                <label style="color: floralwhite; font-weight: 100" id="report_subject_label" for="report_subject">Only upper,lower case and digits:</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="report_subject" name="report_subject"
                        placeholder="Report subject" required="">
 
                 <!--Country-->
-                <label style="color: floralwhite; font-weight: 100" id="country_label" for="country">Choose your
-                    country:</label>
+                <label style="color: floralwhite; font-weight: 100" id="country_label" for="country">Choose your country:</label>
                 <select class="browser-default custom-select" style="margin-top: 5px; margin-bottom: 25px;" id="country"
                         name="country" required="required">
                     <option value="" selected>Country</option>
@@ -79,15 +75,12 @@
                 </select>
 
                 <!--Phone number-->
-                <label style="color: floralwhite; font-weight: 100" id="phone_label" for="phone">Insert your phone
-                    number:</label><br>
+                <label style="color: floralwhite; font-weight: 100; margin-bottom: 5px" id="phone_label" for="phone">Insert your phone number:</label><br>
                 <input class="text email" style="margin-top: 5px; display: block" id="phone" type="text" name="phone"
                        placeholder="Phone" required="">
-                <br class="phone_br_bottom">
-
+                <br>
                 <!--Email-->
-                <label style="color: floralwhite; font-weight: 100 " id="email_label" for="email">Insert your email.
-                    Example: YourEmail@mail.com</label> <br>
+                <label style="color: floralwhite; font-weight: 100 " id="email_label" for="email">Insert your email. Example: YourEmail@mail.com</label> <br>
                 <input class="text email" style="margin-top: 5px;" type="email" id="email" name="email"
                        placeholder="Email" required="">
                 <div class="wthree-text">

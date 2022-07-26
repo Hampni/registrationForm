@@ -1,4 +1,11 @@
-$("#phone").mask(" (999) 999-9999");
+const second_form = document.querySelector('.agileits-top-second');
+const buttons = document.querySelector('.agileits-top-third');
+const titlePart = document.querySelector('.titlePart');
+
+$("#phone").mask(' (999) 999-999?9', {
+    placeholder: ''
+});
+
 $("#birthday").datepicker({
     changeYear: true,
     changeMonth: true
@@ -12,14 +19,24 @@ let array = [
     'country',
     'phone',
     'email'
-]
+];
+let arrayLabels = [];
+for (const item in array) {
+    arrayLabels[array[item]] = document.getElementById(array[item] + '_label').innerHTML;
+};
+
 
 let input = document.querySelector("#phone");
 window.intlTelInput(input, {
-    autoPlaceholder: 'aggressive'
+    autoPlaceholder: 'aggressive',
 });
-let iti = intlTelInput(input)
-let number = iti.getNumber();
+let iti = intlTelInput(input);
+
+
+$('#phone').on('change', function () {
+    $("#phone")[0].value = '+' + iti.getSelectedCountryData().dialCode + $("#phone")[0].value;
+});
+
 
 let dateMask = IMask(
     document.getElementById('birthday'),
@@ -43,12 +60,6 @@ let last_name = IMask(document.getElementById('last_name'), {
     }
 });
 
-
-
-const second_form = document.querySelector('.agileits-top-second')
-const buttons = document.querySelector('.agileits-top-third')
-const titlePart = document.querySelector('.titlePart')
-
 if ($.session.get('data') == 'second_part') {
     $('#agileits-top-first').hide();
     second_form.style.display = '';
@@ -59,9 +70,10 @@ if ($.session.get('data') == 'second_part') {
 $('#first-form').submit(function () {
 
     for (const item in array) {
-        let html = document.getElementById(array[item] + '_label').innerHTML
-        document.getElementById(array[item] + '_label').style.color = 'floralwhite';
-        document.getElementById(array[item] + '_label').innerHTML = html;
+        let label = document.getElementById(array[item] + '_label')
+        let html = arrayLabels[array[item]]
+        label.style.color = 'floralwhite';
+        label.innerHTML = html;
         document.getElementById(array[item]).style.border = '';
     }
 

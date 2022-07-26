@@ -15,6 +15,5 @@ class RegistrationFormController extends Controller
         $this->view->countries = Countries::findAll();
         $this->view->members = User::findAll();
         $this->view->display(__DIR__ . '/../Templates/registrationForm.php');
-
     }
 }
