@@ -105,8 +105,8 @@ abstract class Model
     {
         foreach ($data as $key => $value) {
             if ($key == 'birthday') {
-                $year = substr($value, -4) . '/';
-                $month = substr($value, 3, 2) . '/';
+                $year = substr($value, -4) . '-';
+                $month = substr($value, 3, 2) . '-';
                 $day = substr($value, 0, 2);
                 $this->$key = $year . $month . $day;
             } elseif ($key == 'photo') {

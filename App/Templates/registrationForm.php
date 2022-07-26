@@ -52,7 +52,7 @@
                        required="">
 
                 <!--Birthday-->
-                <label style="color: floralwhite; font-weight: 100" id="birthday_label" for="birthday">Insert full date:</label>
+                <label style="color: floralwhite; font-weight: 100" id="birthday_label" for="birthday">Insert full date: DD.MM.YYYY</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="birthday" name="birthday"
                        placeholder="Birthday"
                        required="">

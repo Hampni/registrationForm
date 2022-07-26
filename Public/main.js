@@ -2,13 +2,17 @@ const second_form = document.querySelector('.agileits-top-second');
 const buttons = document.querySelector('.agileits-top-third');
 const titlePart = document.querySelector('.titlePart');
 
+
 $("#phone").mask(' (999) 999-999?9', {
     placeholder: ''
 });
 
 $("#birthday").datepicker({
+    dateFormat: "dd-mm-yy",
     changeYear: true,
-    changeMonth: true
+    changeMonth: true,
+    yearRange: "1950:2022"
+
 });
 
 let array = [
@@ -23,8 +27,7 @@ let array = [
 let arrayLabels = [];
 for (const item in array) {
     arrayLabels[array[item]] = document.getElementById(array[item] + '_label').innerHTML;
-};
-
+}
 
 let input = document.querySelector("#phone");
 window.intlTelInput(input, {
@@ -32,11 +35,9 @@ window.intlTelInput(input, {
 });
 let iti = intlTelInput(input);
 
-
 $('#phone').on('change', function () {
     $("#phone")[0].value = '+' + iti.getSelectedCountryData().dialCode + $("#phone")[0].value;
 });
-
 
 let dateMask = IMask(
     document.getElementById('birthday'),
