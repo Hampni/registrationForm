@@ -13,7 +13,7 @@ class ImageController extends Controller
 
         if (isset($_POST['my_file_upload'])) {
             $id = $_SESSION['id'];
-            $uploaddir = './Public/Images'; //  
+            $uploaddir = './Public/Images';
 
             // cоздадим папку если её нет
             if (!is_dir($uploaddir)) mkdir($uploaddir, 0777);

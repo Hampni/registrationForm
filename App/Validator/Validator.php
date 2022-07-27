@@ -87,6 +87,27 @@ class Validator
         }
     }
 
+    public function validateCompany($key, $field)
+    {
+        if (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
+            $this->errors[$key] = 'Used invalid symbols. Only upper, lower case and digits';
+        }
+    }
+
+    public function validatePosition($key, $field)
+    {
+        if (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
+            $this->errors[$key] = 'Used invalid symbols. Only upper, lower case and digits';
+        }
+    }
+
+    public function validateAbout_me($key, $field)
+    {
+        if (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
+            $this->errors[$key] = 'Used invalid symbols. Only upper, lower case and digits';
+        }
+    }
+
     public function getErrors()
     {
         return $this->errors;

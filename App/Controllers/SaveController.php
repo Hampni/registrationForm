@@ -29,13 +29,18 @@ class SaveController extends Controller
             }
 
         } else {
-            $user = User::findById($_SESSION['id']);
-            $user->fill($_POST);
-            $user->save();
-            echo $_SESSION['id'];
-            session_destroy();
+            $validator = new Validator();
+            $validator->validate($_POST);
+
+            if (empty($validator->getErrors())) {
+                $user = User::findById($_SESSION['id']);
+                $user->fill($_POST);
+                $user->save();
+                session_destroy();
+            } else {
+                $errors = json_encode($validator->getErrors());
+                echo $errors;
+            }
         }
-
-
     }
 }

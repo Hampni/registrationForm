@@ -10,7 +10,6 @@ $("#company")[0].placeholder = 'Company';
 $("#position")[0].placeholder = 'Position';
 
 
-
 $("#phone").mask(' (999) 999-999?9', {
     placeholder: ''
 });
@@ -32,7 +31,10 @@ let array = [
     'report_subject',
     'country',
     'phone',
-    'email'
+    'email',
+    'company',
+    'position',
+    'about_me'
 ];
 
 let arrayLabels = [];
@@ -48,7 +50,6 @@ let iti = intlTelInput(input);
 $('#phone').on('change', function () {
     $("#phone")[0].value = '+' + iti.getSelectedCountryData().dialCode + $("#phone")[0].value;
 });
-
 
 
 $('#first_name').on('click', function () {
@@ -132,6 +133,15 @@ let report_subject = IMask(document.getElementById('report_subject'), {
     mask: '******************************',
 });
 
+let company = IMask(document.getElementById('company'), {
+    mask: '********************',
+});
+
+let position = IMask(document.getElementById('position'), {
+    mask: '********************',
+
+});
+
 
 $('.iti.iti--allow-dropdown')[0].style.width = '100%';
 $('.iti.iti--allow-dropdown')[0].style.marginBottom = '13px';
@@ -166,6 +176,7 @@ $('#first-form').submit(function () {
                 $('#agileits-top-first').hide('slow');
                 second_form.style.display = '';
                 $.session.set('data', 'second_part');
+                console.log(msg)
             } else {
                 let fields = JSON.parse(msg)
                 for (const key in fields) {
@@ -194,6 +205,14 @@ $('input[type=file]').on('change', function () {
 $('#second-form').submit(function (e) {
     e.preventDefault();
 
+    for (const item in array) {
+        let label = document.getElementById(array[item] + '_label')
+        let html = arrayLabels[array[item]]
+        label.style.color = 'floralwhite';
+        label.innerHTML = html;
+        document.getElementById(array[item]).style.border = '';
+    }
+
     // создадим объект данных формы
     let data = new FormData(document.querySelector('.second-form'));
     $.each(files, function (key, value) {
@@ -217,14 +236,29 @@ $('#second-form').submit(function (e) {
 
                 $("#second-form").serialize(),  // отправляемые данные
 
-                function (response) { // получен ответ сервера
-                    $('#first-form').hide();
-                    $('#agileits-top-first').hide();
-                    $('#second-form').hide('slow');
-                    $('#agileits-top-second').hide('slow');
-                    $.session.clear();
-                    buttons.style.display = 'block';
-                    titlePart.style.display = 'none';
+                function (msg) { // получен ответ сервера
+
+                    if (msg.length == 0) {
+                        $('#first-form').hide();
+                        $('#agileits-top-first').hide();
+                        $('#second-form').hide('slow');
+                        $('#agileits-top-second').hide('slow');
+                        $.session.clear();
+                        buttons.style.display = 'block';
+                        titlePart.style.display = 'none';
+                    } else {
+                        let fields = JSON.parse(msg)
+                        for (const key in fields) {
+
+                            if (document.getElementById(key).value == '') {
+                                document.getElementById(key + '_label').innerHTML = 'These field cannot be empty!';
+                                document.getElementById(key + '_label').style.color = 'red';
+                            }
+                            document.getElementById(key + '_label').style.color = 'red';
+                            document.getElementById(key + '_label').innerHTML = fields[key];
+                            document.getElementById(key).style.border = 'red solid 1px';
+                        }
+                    }
                 }
             );
             return false;

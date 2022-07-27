@@ -94,8 +94,15 @@
 
             <!--second step-->
             <form class="second-form" id="second-form">
+
+                <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="company_label" for="company">Your company:</label>
                 <input class="text" type="text" id="company" name="company" placeholder="Company">
-                <input class="text email" type="text" id="position" name="position" placeholder="Position">
+                <br>
+
+                <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="position_label" for="position">Choose your country:</label>
+                <input class="text email" style="margin-top: 0" type="text" id="position" name="position" placeholder="Position">
+
+                <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="about_me_label" for="about_me">Tell us something about yourself:</label>
                 <textarea class="form-control" name="about_me" placeholder="About me"
                           id="about_me" rows="4"></textarea>
                 <label style="padding-top: 10px; color: white" for="formFileLg" class="form-label">Photo:</label>
