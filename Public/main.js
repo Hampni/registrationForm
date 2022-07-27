@@ -129,18 +129,7 @@ let last_name = IMask(document.getElementById('last_name'), {
     mask: '********************',
 });
 
-let report_subject = IMask(document.getElementById('report_subject'), {
-    mask: '******************************',
-});
 
-let company = IMask(document.getElementById('company'), {
-    mask: '********************',
-});
-
-let position = IMask(document.getElementById('position'), {
-    mask: '********************',
-
-});
 
 
 $('.iti.iti--allow-dropdown')[0].style.width = '100%';

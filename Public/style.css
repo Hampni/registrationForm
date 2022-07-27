@@ -499,6 +499,17 @@ input[type="submit"]:hover {
     border-radius: 30px;
 }
 
+.reportSubj {
+    position: relative;
+    top: 35%;
+    left: 20px;
+    right: 20px;
+    padding: 20px;
+    transform: translateY(-40%);
+    resize: vertical;
+}
+
+
 .colorlib-bubbles li:nth-child(6) {
     left: 80%;
     width: 120px;
