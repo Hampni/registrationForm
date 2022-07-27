@@ -82,6 +82,8 @@ class Validator
             $this->errors[$key] = 'You did not insert email';
         } elseif ($email !== 'not found') {
             $this->errors[$key] = 'Such email already exists!';
+        } elseif (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
+            $this->errors[$key] = 'Used invalid symbols';
         }
     }
 

@@ -229,16 +229,7 @@ input.email, input.text.w3lpass {
     background-position: 0 0;
 }
 
-.text:focus::-webkit-input-placeholder, .text:valid::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: .9em;
-    -webkit-transform: translateY(-30px);
-    -moz-transform: translateY(-30px);
-    -o-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    transform: translateY(-30px);
-    visibility: visible !important;
-}
+
 
 ::-webkit-input-placeholder {
     color: #fff;
@@ -323,62 +314,6 @@ input[type="submit"]:hover {
     font-weight: 200;
     cursor: pointer;
     position: relative;
-}
-
-input.checkbox {
-    background: #8DC26F;
-    cursor: pointer;
-    width: 1.2em;
-    height: 1.2em;
-}
-
-input.checkbox:before {
-    content: "";
-    position: absolute;
-    width: 1.2em;
-    height: 1.2em;
-    background: inherit;
-    cursor: pointer;
-}
-
-input.checkbox:after {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0;
-    z-index: 1;
-    width: 1.2em;
-    height: 1.2em;
-    border: 1px solid #fff;
-    -webkit-transition: .4s ease-in-out;
-    -moz-transition: .4s ease-in-out;
-    -o-transition: .4s ease-in-out;
-    transition: .4s ease-in-out;
-}
-
-input.checkbox:checked:after {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    height: .5rem;
-    border-color: #fff;
-    border-top-color: transparent;
-    border-right-color: transparent;
-}
-
-.anim input.checkbox:checked:after {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    height: .5rem;
-    border-color: transparent;
-    border-right-color: transparent;
-    animation: .4s rippling .4s ease;
-    animation-fill-mode: forwards;
 }
 
 @keyframes rippling {
@@ -576,21 +511,7 @@ input.checkbox:checked:after {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-    color: white;
-}
 
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: white;
-}
-
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: white;
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: white;
-}
 
 .colorlib-bubbles li:nth-child(7) {
     left: 32%;

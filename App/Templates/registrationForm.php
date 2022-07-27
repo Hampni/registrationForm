@@ -58,7 +58,7 @@
                        required="">
 
                 <!--Report Subject-->
-                <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="report_subject_label" for="report_subject">Only upper,lower case and digits:</label>
+                <label style="color: floralwhite; font-size: 14px; font-weight: 100" id="report_subject_label" for="report_subject">Upper, lower case, digits allowed. Max 30 symbols</label>
                 <input class="text email" style="margin-top: 5px;" type="text" id="report_subject" name="report_subject"
                        placeholder="" required="">
 

@@ -30,9 +30,9 @@
     <div class="main-agileinfo" style="width: 100%;">
         <div class="members-convert">
             <?php foreach ($this->members as $member) : ?>
-                <div class="container text-center">
+                <div class="container text-center" style="max-width: 1800px">
                     <div class="row">
-                        <div class="col">
+                        <div class="col" style="max-width: 150px">
                             <?php echo '<span><img class="member-image" src="/Public/Images/' . $member->photo . '" alt="">'; ?>
                         </div>
                         <div class="col">

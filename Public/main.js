@@ -9,6 +9,8 @@ $("#email")[0].placeholder = 'Email';
 $("#company")[0].placeholder = 'Company';
 $("#position")[0].placeholder = 'Position';
 
+
+
 $("#phone").mask(' (999) 999-999?9', {
     placeholder: ''
 });
@@ -17,7 +19,9 @@ $("#birthday").datepicker({
     dateFormat: "dd-mm-yy",
     changeYear: true,
     changeMonth: true,
-    yearRange: "1950:2021"
+    yearRange: "1951:2021",
+    currentText: "Now",
+    maxDate: "-1y"
 
 });
 
@@ -67,7 +71,6 @@ $(document).on('click', function (e) {
     }
 });
 
-
 $('#report_subject').on('click', function () {
     $("#report_subject")[0].placeholder = ' ';
 });
@@ -112,23 +115,21 @@ let dateMask = IMask(
     document.getElementById('birthday'),
     {
         mask: Date,
-        min: new Date(1950, 0, 1),
+        min: new Date(1951, 0, 1),
         max: new Date(2021, 12, 30),
         lazy: false
     });
 
 let first_name = IMask(document.getElementById('first_name'), {
-    mask: '#aaaaaaaaaaaaaaaaaaaa',
-    definitions: {
-        '#': /[A-Za-z]/
-    }
+    mask: '********************',
 });
 
 let last_name = IMask(document.getElementById('last_name'), {
-    mask: '#aaaaaaaaaaaaaaaaaaaa',
-    definitions: {
-        '#': /[A-Za-z]/
-    }
+    mask: '********************',
+});
+
+let report_subject = IMask(document.getElementById('report_subject'), {
+    mask: '******************************',
 });
 
 
