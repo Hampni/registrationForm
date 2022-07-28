@@ -103,8 +103,10 @@ class Validator
 
     public function validateAbout_me($key, $field)
     {
-        if (preg_match('~[\\\/:*?"\'<>|\r\n]~', $field)) {
+        if (preg_match('~[\\\/:*?"\'<>|]~', $field)) {
             $this->errors[$key] = 'Used invalid symbols. Only upper, lower case and digits';
+        } elseif (preg_match('~[\r\n]~', $field)) {
+            $this->errors[$key] = 'No line breaks';
         }
     }
 
