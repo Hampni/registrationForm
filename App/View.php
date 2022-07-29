@@ -5,9 +5,9 @@ namespace App;
 use App\SetGetReadTrait;
 use JetBrains\PhpStorm\Internal;
 
-
 class View
 {
+    use SetGetReadTrait;
 
     private $data = [];
 
@@ -42,7 +42,4 @@ class View
         ob_end_clean();
         return $contents;
     }
-
-    use SetGetReadTrait;
-
 }

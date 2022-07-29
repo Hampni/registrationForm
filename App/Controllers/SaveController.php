@@ -9,11 +9,9 @@ use App\Validator\Validator;
 
 class SaveController extends Controller
 {
-
     public function action()
     {
         if (empty($_SESSION['id'])) {
-
             $validator = new Validator();
             $validator->validate($_POST);
 
@@ -22,12 +20,10 @@ class SaveController extends Controller
                 $user->fill($_POST);
                 $user->save();
                 $_SESSION['id'] = $user->id;
-
             } else {
                 $errors = json_encode($validator->getErrors());
                 echo $errors;
             }
-
         } else {
             $validator = new Validator();
             $validator->validate($_POST);

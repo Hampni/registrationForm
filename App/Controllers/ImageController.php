@@ -7,16 +7,16 @@ use App\Models\User;
 
 class ImageController extends Controller
 {
-
     public function action()
     {
-
         if (isset($_POST['my_file_upload'])) {
             $id = $_SESSION['id'];
             $uploaddir = './Public/Images';
 
             // cоздадим папку если её нет
-            if (!is_dir($uploaddir)) mkdir($uploaddir, 0777);
+            if (!is_dir($uploaddir)) {
+                mkdir($uploaddir, 0777);
+            }
 
             $files = $_FILES; // полученные файлы
             $done_files = array();

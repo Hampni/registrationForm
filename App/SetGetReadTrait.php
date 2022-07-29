@@ -4,8 +4,7 @@ namespace App;
 
 trait SetGetReadTrait
 {
-
-    public function __set($key,$value)
+    public function __set($key, $value)
     {
         $this->data[$key] = $value;
     }
@@ -19,5 +18,4 @@ trait SetGetReadTrait
     {
         return isset($this->data[$key]);
     }
-
 }

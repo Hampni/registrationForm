@@ -7,7 +7,6 @@ use App\Models\User;
 
 class MembersController extends Controller
 {
-
     public function action()
     {
         $members = User::findAll();
@@ -20,6 +19,5 @@ class MembersController extends Controller
         }
         $this->view->members = $members;
         $this->view->display(__DIR__ . '/../Templates/members.php');
-
     }
 }

@@ -4,7 +4,6 @@ namespace App;
 
 abstract class Controller
 {
-
     protected View $view;
 
     public function __construct()
@@ -18,6 +17,4 @@ abstract class Controller
     }
 
     abstract protected function action();
-
-
 }

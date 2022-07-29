@@ -4,7 +4,6 @@ namespace App;
 
 abstract class Model
 {
-
     protected const TABLE = '';
     public int $id;
 
@@ -20,7 +19,7 @@ abstract class Model
     }
 
     /**
-     * @param $id // id of the table row
+     * @param  $id // id of the table row
      * @return mixed|void // row of the table
      */
     public static function findById($id)
@@ -69,7 +68,6 @@ abstract class Model
         $db->execute($sql, $data);
 
         $this->id = $db->lastInsertId();
-
     }
 
     public function update()
@@ -83,12 +81,10 @@ abstract class Model
         $sql = 'UPDATE ' . static::TABLE . ' SET ' . implode(', ', $props) . ' WHERE id = :id';
         $db = new Db();
         $db->execute($sql, $data);
-
     }
 
     public function delete(): bool
     {
-
         $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
         $db = new Db();
         return $db->execute($sql, [':id' => $this->id]);
@@ -98,7 +94,9 @@ abstract class Model
     {
         if (isset($this->id)) {
             $this->update();
-        } else $this->insert();
+        } else {
+            $this->insert();
+        }
     }
 
     public function fill(array $data)
@@ -124,5 +122,4 @@ abstract class Model
         $data = $db->query($sql);
         return $data;
     }
-
 }

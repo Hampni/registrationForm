@@ -14,5 +14,4 @@ class User extends Model
     public string $country;
     public string $phone;
     public string $email;
-
 }

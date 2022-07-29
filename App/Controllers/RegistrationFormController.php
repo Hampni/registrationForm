@@ -8,7 +8,6 @@ use App\Models\User;
 
 class RegistrationFormController extends Controller
 {
-
     public function action()
     {
         $this->view->chart = require __DIR__ . '/../Templates/chart.php';

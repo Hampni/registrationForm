@@ -4,7 +4,6 @@ namespace App;
 
 class Config
 {
-
     public $data;
 
     /**
@@ -14,5 +13,4 @@ class Config
     {
         $this->data = require __DIR__ . '/../config.php';
     }
-
 }

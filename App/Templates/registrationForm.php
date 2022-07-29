@@ -71,7 +71,7 @@
                     foreach ($this->countries as $country) {
                         echo '<option style="color: black" value="' . $country->name . '">' . $country->name . '</option>';
                     }
-                    ?>
+?>
                 </select>
 
                 <!--Phone number-->

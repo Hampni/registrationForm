@@ -6,14 +6,11 @@ use App\Models\User;
 
 class Validator
 {
-
     protected array $errors = [];
 
     public function validate($requestData): void
     {
-
         foreach ($requestData as $key => $field) {
-
             if (method_exists(self::class, 'validate' . ucfirst($key))) {
                 $validationMethod = 'validate' . ucfirst($key);
                 $this->$validationMethod($key, $field);
