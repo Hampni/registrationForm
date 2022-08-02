@@ -11,9 +11,7 @@ class MembersController extends Controller
     {
         $members = User::findAll();
         foreach ($members as $member) {
-            if (!file_exists(__DIR__ . '/../../Public/Images/' . $member->photo)) {
-                $member->photo = 'default.png';
-            } elseif ($member->photo == null) {
+             if ($member->photo == null) {
                 $member->photo = 'default.png';
             }
         }

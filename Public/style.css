@@ -254,6 +254,26 @@ input::-webkit-input-placeholder {
     line-height: normal;!important;
 }
 
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+/* Firefox < 19 */
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+/* Firefox > 19 */
+
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+/* Internet Explorer 10 */
+
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
 input[type="submit"] {
     font-size: .9em;
     color: #fff;

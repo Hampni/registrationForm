@@ -13,36 +13,21 @@ class ImageController extends Controller
             $id = $_SESSION['id'];
             $uploaddir = './Public/Images';
 
-            // cоздадим папку если её нет
+            // create folder if does not exist
             if (!is_dir($uploaddir)) {
                 mkdir($uploaddir, 0777);
             }
 
-            $files = $_FILES; // полученные файлы
-            $done_files = array();
+            $files = $_FILES; // received file
 
-            // переместим файлы из временной директории в указанную
+            //  move files from temp directory to specified directory
             foreach ($files as $file) {
                 $file_name = $file['name'];
+                move_uploaded_file($file['tmp_name'], "$uploaddir/$file_name");
 
-                if (move_uploaded_file($file['tmp_name'], "$uploaddir/$file_name")) {
-                    $done_files[] = realpath("$uploaddir/$file_name");
-                    $user = User::findById($id);
-                    $user->fill(['photo' => $file_name]);
-                    $user->save();
-                } else {
+                if ($file_name === '') {
                     $file_name = 'default.png';
-                    $user = User::findById($id);
-                    $user->fill(['photo' => $file_name]);
-                    $user->save();
                 }
-            }
-
-            $data = $done_files ? array('files' => $done_files) : array('error' => 'Ошибка загрузки файлов.');
-
-            // добавляем данные в столбец фото
-            if ($file_name == '') {
-                $file_name = 'default.png';
                 $user = User::findById($id);
                 $user->fill(['photo' => $file_name]);
                 $user->save();
@@ -50,4 +35,5 @@ class ImageController extends Controller
             die(json_encode($id));
         }
     }
+
 }

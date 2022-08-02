@@ -34,6 +34,10 @@ abstract class Model
         }
     }
 
+    /**
+     * @param $email
+     * @return mixed|string
+     */
     public static function findByEmail($email)
     {
         $db = new Db();
@@ -70,6 +74,9 @@ abstract class Model
         $this->id = $db->lastInsertId();
     }
 
+    /**
+     * @return void
+     */
     public function update()
     {
         $props = [];
@@ -83,13 +90,9 @@ abstract class Model
         $db->execute($sql, $data);
     }
 
-    public function delete(): bool
-    {
-        $sql = 'DELETE FROM ' . static::TABLE . ' WHERE id=:id';
-        $db = new Db();
-        return $db->execute($sql, [':id' => $this->id]);
-    }
-
+    /**
+     * @return void
+     */
     public function save()
     {
         if (isset($this->id)) {
@@ -99,6 +102,10 @@ abstract class Model
         }
     }
 
+    /**
+     * @param array $data
+     * @return void
+     */
     public function fill(array $data)
     {
         foreach ($data as $key => $value) {
@@ -113,13 +120,5 @@ abstract class Model
                 $this->$key = $value;
             }
         }
-    }
-
-    public function getLastId()
-    {
-        $db = new Db();
-        $sql = "SELECT MAX(id) FROM " . static::TABLE;
-        $data = $db->query($sql);
-        return $data;
     }
 }
