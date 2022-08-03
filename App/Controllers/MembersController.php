@@ -10,11 +10,6 @@ class MembersController extends Controller
     public function action()
     {
         $members = User::findAll();
-        foreach ($members as $member) {
-             if ($member->photo == null) {
-                $member->photo = 'default.png';
-            }
-        }
         $this->view->members = $members;
         $this->view->display(__DIR__ . '/../Templates/members.php');
     }

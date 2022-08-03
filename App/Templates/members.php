@@ -41,8 +41,6 @@
     </div>
     <?php include __DIR__ . '/bubbles.php' ?>
 </div>
-
-
 <?php include __DIR__ . '/footer.php'?>
 </body>
 </html>
