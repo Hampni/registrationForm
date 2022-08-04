@@ -121,4 +121,24 @@ abstract class Model
             }
         }
     }
+
+    /**
+     * @return mixed
+     */
+    public static function countUsers()
+    {
+        $db = new Db();
+        $sql = 'SELECT COUNT(*) as count FROM ' . static::TABLE;
+        $data = $db->query($sql);
+        return $data[0]->count;
+    }
+
+
+    public static function getPaginatedData($offset, $amountOfContent)
+    {
+        $db = new Db();
+        $sql = 'SELECT * FROM ' . static::TABLE . ' LIMIT ' . $offset . ', ' . $amountOfContent;
+        $data = $db->query($sql);
+        return $data;
+    }
 }

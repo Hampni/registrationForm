@@ -16,11 +16,5 @@ class User extends Model
     public string $phone;
     public string $email;
 
-    public static function countUsers()
-    {
-        $db = new Db();
-        $sql = 'SELECT COUNT(*) as count FROM ' . static::TABLE;
-        $data = $db->query($sql);
-        return $data[0]->count;
-    }
+
 }

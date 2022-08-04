@@ -1,8 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+
 <meta charset="utf-8">
 <meta property="og:title" content="Check out this Meetup with SoCal AngularJS! "/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
+    <title><?php echo $this->title ?></title>
 <link rel="stylesheet" href="/Public/jquery-ui.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
 <script src="/Public/jquery-ui.min.js"></script>
@@ -17,3 +21,7 @@
 <link href="/Public/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
 <link rel="stylesheet" href="/node_modules/intl-tel-input/build/css/intlTelInput.css">
+
+</head>
+<body>
+
