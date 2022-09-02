@@ -11,7 +11,7 @@ class ImageController extends Controller
     {
         if (isset($_POST['my_file_upload'])) {
             $id = $_SESSION['id'];
-            $uploaddir = './Public/Images';
+            $uploaddir = './src/Images';
 
             // create folder if does not exist
             if (!is_dir($uploaddir)) {

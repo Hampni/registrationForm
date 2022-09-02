@@ -8,12 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @import 'intl-tel-input/build/css/intlTelInput.css';
 
 .iti__flag {
-    background-image: url("node_modules/intl-tel-input/build/img/flags.png");
+    background-image: url("../node_modules/intl-tel-input/build/img/flags.png");
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .iti__flag {
-        background-image: url("node_modules/intl-tel-input/build/img/flags@2x.png");
+        background-image: url("../node_modules/intl-tel-input/build/img/flags@2x.png");
     }
 }
 
@@ -165,8 +165,6 @@ a.linkPagination {
     color: #e9e9e9;
 }
 
-
-
 .main-agileinfo {
     width: 35%;
     margin: 3em auto;
@@ -258,7 +256,6 @@ input.email, input.text.w3lpass {
 
 input::-webkit-input-placeholder {
     line-height: normal;
-!important;
 }
 
 input:focus::-webkit-input-placeholder {

@@ -1,3 +1,5 @@
+import "./style.css"
+
 const second_form = document.querySelector('.agileits-top-second')
 const buttons = document.querySelector('.agileits-top-third')
 const titlePart = document.querySelector('.titlePart')
@@ -33,10 +35,11 @@ const array = [
   'about_me'
 ]
 
-const arrayLabels = []
+const arrayLabels = [];
 for (const item in array) {
   arrayLabels[array[item]] = document.getElementById(array[item] + '_label').innerHTML
 }
+
 const input = document.querySelector('#phone')
 
 window.intlTelInput(

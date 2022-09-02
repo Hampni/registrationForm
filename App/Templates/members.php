@@ -17,7 +17,7 @@
                 <div class="container text-center" style="max-width: 1800px; height: fit-content">
                     <div class="row">
                         <div class="col" style="max-width: 150px">
-                            <div style="padding-top: 30px"> <?php echo '<span><img class="member-image" src="/Public/Images/' . $member->photo . '" alt="">'; ?></div>
+                            <div style="padding-top: 30px"> <?php echo '<span><img class="member-image" public="/src/Images/' . $member->photo . '" alt="">'; ?></div>
                         </div>
                         <div class="col" style="max-width: 400px">
                             <div class="reportSubj"><?php echo $member->first_name . ' ' . $member->last_name; ?></div>
