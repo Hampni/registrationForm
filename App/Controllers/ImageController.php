@@ -9,7 +9,7 @@ class ImageController extends Controller
 {
     public function action()
     {
-        if (isset($_POST['my_file_upload'])) {
+        if ($_FILES) {
             $id = $_SESSION['id'];
             $uploaddir = './src/Images';
 
@@ -35,5 +35,4 @@ class ImageController extends Controller
             die(json_encode($id));
         }
     }
-
 }

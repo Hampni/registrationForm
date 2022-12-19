@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "setupFiles": ["./setup-jest.js"]
+  },
   "scripts": {
     "start": "webpack serve",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production webpack --watch",
-    "build-dev": "webpack --watch"
+    "build-dev": "webpack --watch",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,12 +26,16 @@
     "@babel/core": "^7.18.13",
     "@babel/preset-env": "^7.18.10",
     "@chenfengyuan/datepicker": "^1.0.10",
+    "babel-jest": "^29.3.1",
     "babel-loader": "^8.2.5",
     "imask": "^6.4.2",
-    "intl-tel-input": "^17.0.18"
+    "intl-tel-input": "^17.0.19",
+    "jest-transform-stub": "^2.0.0",
+    "jquery": "^3.6.2"
   },
   "devDependencies": {
     "css-loader": "^6.7.1",
+    "jest": "^29.3.1",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
